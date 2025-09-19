@@ -15,6 +15,8 @@ Route1Youngster1Text:
 	call PrintText
 	lb bc, POTION, 1
 	call GiveItem
+	lb bc, OLD_ROD, 1
+	call GiveItem
 	jr nc, .bag_full
 	ld hl, .GotPotionText
 	jr .done
