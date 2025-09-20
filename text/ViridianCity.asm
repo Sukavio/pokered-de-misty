@@ -5,11 +5,11 @@ _ViridianCityYoungster1Text::
 	cont "Du #MON"
 	cont "besitzt!"
 
-	para "Es ist klasse,"
-	line "daß man jederzeit"
-	cont "#MON tragen"
-	cont "und einsetzen"
-	cont "kann, nicht wahr?"
+	para "Pokemon können,"
+	line "auch im Wasser"
+	cont "gefangen werden."
+	cont "Nehme meine Angel"
+	cont "viel Spaß!"
 	done
 
 _ViridianCityGambler1GymAlwaysClosedText::

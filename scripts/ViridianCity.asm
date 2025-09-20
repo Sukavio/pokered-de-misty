@@ -144,7 +144,30 @@ ViridianCity_TextPointers:
 	dw_const ViridianCityOldManYouNeedToWeakenTheTargetText, TEXT_VIRIDIANCITY_OLD_MAN_YOU_NEED_TO_WEAKEN_THE_TARGET
 
 ViridianCityYoungster1Text:
+    text_asm
+    CheckAndSetEvent EVENT_GOT_OLD_ROD
+    jr nz, .got_item
+	lb bc, OLD_ROD, 1
+	call GiveItem
+	jr nc, .bag_full
+	ld hl, .ViridianCityYoungsterGiveRoodText
+	jr .print_text
+.bag_full
+	ld hl, .NoRoomText
+	jr .print_text
+.got_item
+	ld hl, .ViridianCityYoungsterGiveRoodText
+    jr .print_text
+.print_text
+    call PrintText
+    jp TextScriptEnd
+
+.ViridianCityYoungsterGiveRoodText:
 	text_far _ViridianCityYoungster1Text
+	text_end
+
+.NoRoomText:
+	text_far _Route1Youngster1NoRoomText
 	text_end
 
 ViridianCityGambler1Text:
